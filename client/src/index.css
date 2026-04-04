@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -43,39 +44,54 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  /* Clarity-First Minimalism Design System */
+  /* Primary: Deep slate blue for trust and authority */
+  --primary: oklch(0.35 0.15 260);
+  --primary-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.35 0.15 260);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  
+  /* Secondary: Warm orange for action and attention */
+  --secondary: oklch(0.62 0.22 35);
+  --secondary-foreground: oklch(0.98 0 0);
+  
+  /* Accent: Soft green for success states */
+  --accent: oklch(0.70 0.15 150);
+  --accent-foreground: oklch(0.15 0.05 260);
+  
+  /* Destructive: Soft red for warnings */
+  --destructive: oklch(0.63 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  /* Neutral palette */
+  --background: oklch(0.98 0.001 0);
+  --foreground: oklch(0.18 0.02 260);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.18 0.02 260);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.18 0.02 260);
+  --muted: oklch(0.90 0.01 260);
+  --muted-foreground: oklch(0.50 0.05 260);
+  --border: oklch(0.92 0.01 260);
+  --input: oklch(0.95 0.005 260);
+  --ring: oklch(0.35 0.15 260);
+  
+  --sidebar: oklch(0.99 0 0);
+  --sidebar-foreground: oklch(0.18 0.02 260);
+  --sidebar-accent: oklch(0.62 0.22 35);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.92 0.01 260);
+  --sidebar-ring: oklch(0.35 0.15 260);
+  
+  /* Chart colors */
+  --chart-1: oklch(0.35 0.15 260);
+  --chart-2: oklch(0.62 0.22 35);
+  --chart-3: oklch(0.70 0.15 150);
+  --chart-4: oklch(0.63 0.22 25);
+  --chart-5: oklch(0.50 0.10 200);
+  
+  /* Radius: Subtle rounded corners */
+  --radius: 0.5rem;
 }
 
 .dark {
@@ -118,7 +134,14 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
