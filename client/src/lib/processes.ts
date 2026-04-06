@@ -19,7 +19,7 @@ export interface CommonMistake {
 export interface GovernmentProcess {
   id: string;
   name: string;
-  category: 'identity' | 'travel' | 'tax' | 'transport' | 'education';
+  category: 'identity' | 'travel' | 'tax' | 'transport' | 'education' | 'vital-records' | 'welfare';
   description: string;
   what_is_it: string;
   who_can_apply: string;
@@ -1165,6 +1165,839 @@ export const processes: GovernmentProcess[] = [
     ],
     official_link: 'https://www.cbseacademic.nic.in',
     official_link_text: 'Visit CBSE Official Website'
+  },
+  {
+    id: 'birth-certificate',
+    name: 'Birth Certificate Application',
+    category: 'vital-records',
+    description: 'Register or obtain a birth certificate from the municipal corporation',
+    what_is_it: 'A birth certificate is an official document issued by the municipal corporation that records the birth of a child. It serves as proof of identity, citizenship, age, and parentage. It\'s required for school admission, passport applications, marriage registration, and various government benefits.',
+    who_can_apply: 'Parents or guardians of a child, or the child themselves (if adult). Birth certificates can be obtained within 30 days of birth (normal registration) or after 30 days (late registration).',
+    eligibility: [
+      'Must be a registered birth in India',
+      'Must have proof of birth (hospital discharge summary, midwife certificate, or witness)',
+      'Must provide parent\'s identity and address proof',
+      'For late registration, must have supporting documents'
+    ],
+    documents_required: [
+      {
+        name: 'Hospital discharge summary or birth notification',
+        description: 'Official document from the hospital where birth took place',
+        where_to_get: 'Hospital where child was born'
+      },
+      {
+        name: 'Parent\'s identity proof',
+        description: 'Aadhaar, PAN, voter ID, or driving licence of either parent',
+        where_to_get: 'Already in your possession'
+      },
+      {
+        name: 'Parent\'s address proof',
+        description: 'Electricity bill, water bill, rent agreement, or property tax receipt',
+        where_to_get: 'Your utility provider or landlord'
+      },
+      {
+        name: 'Birth registration form',
+        description: 'Form to be filled at the municipal corporation office',
+        where_to_get: 'Municipal corporation office or website'
+      },
+      {
+        name: 'Affidavit (for late registration)',
+        description: 'Notarized affidavit stating reasons for late registration',
+        where_to_get: 'Notary public'
+      }
+    ],
+    fees: [
+      {
+        amount: 'Free',
+        description: 'Birth certificate registration within 30 days of birth'
+      },
+      {
+        amount: '₹50-₹100',
+        description: 'Late registration fee (after 30 days but within 1 year)'
+      },
+      {
+        amount: '₹100-₹500',
+        description: 'Very late registration fee (after 1 year, requires court order)'
+      },
+      {
+        amount: '₹10-₹25',
+        description: 'Duplicate certificate fee'
+      }
+    ],
+    steps: [
+      {
+        number: 1,
+        title: 'Locate Municipal Corporation Office',
+        description: 'Find your nearest municipal corporation office (Nagar Nigam, Municipal Council, or Gram Panchayat depending on your area).'
+      },
+      {
+        number: 2,
+        title: 'Collect Birth Registration Form',
+        description: 'Obtain the birth registration form from the municipal office or download from their website.'
+      },
+      {
+        number: 3,
+        title: 'Fill Application Form',
+        description: 'Complete the form with child\'s details, parent\'s information, and birth details.'
+      },
+      {
+        number: 4,
+        title: 'Attach Required Documents',
+        description: 'Attach hospital discharge summary, parent\'s identity proof, and address proof.'
+      },
+      {
+        number: 5,
+        title: 'Submit Application',
+        description: 'Submit the completed form to the municipal corporation office with all documents.'
+      },
+      {
+        number: 6,
+        title: 'Pay Registration Fee',
+        description: 'Pay the registration fee (if applicable) at the municipal office.'
+      },
+      {
+        number: 7,
+        title: 'Receive Registration Number',
+        description: 'You\'ll receive a registration number and receipt. Keep this for future reference.'
+      },
+      {
+        number: 8,
+        title: 'Collect Birth Certificate',
+        description: 'Collect the birth certificate from the office (usually within 5-7 working days).'
+      }
+    ],
+    processing_time: '5-7 working days (normal), 15-30 days (late registration)',
+    common_mistakes: [
+      {
+        mistake: 'Incomplete hospital discharge summary',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Ensure hospital document has all required details and official stamp.'
+      },
+      {
+        mistake: 'Incorrect parent\'s name or spelling',
+        consequence: 'Birth certificate issued with errors, need for correction',
+        how_to_avoid: 'Double-check spelling of parent\'s name. Use exact name as in identity proof.'
+      },
+      {
+        mistake: 'Missing address proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide valid address proof showing current residence.'
+      },
+      {
+        mistake: 'Delayed registration without proper documentation',
+        consequence: 'Application rejection or need for court order',
+        how_to_avoid: 'Register within 30 days. For late registration, provide affidavit and supporting documents.'
+      },
+      {
+        mistake: 'Incorrect child\'s name',
+        consequence: 'Birth certificate issued with wrong name',
+        how_to_avoid: 'Verify child\'s name before submission. Ensure it matches hospital records.'
+      },
+      {
+        mistake: 'Using invalid identity proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Use valid government-issued ID. Ensure it\'s not expired.'
+      },
+      {
+        mistake: 'Not keeping registration receipt',
+        consequence: 'Difficulty obtaining duplicate certificate',
+        how_to_avoid: 'Keep the registration receipt and registration number safe.'
+      },
+      {
+        mistake: 'Applying to wrong municipal office',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Apply to the municipal office of the area where birth took place.'
+      },
+      {
+        mistake: 'Incomplete application form',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Fill all mandatory fields. Don\'t leave any field blank.'
+      },
+      {
+        mistake: 'Not providing witness for home births',
+        consequence: 'Application rejection',
+        how_to_avoid: 'For home births, provide affidavit from midwife or witness to birth.'
+      }
+    ],
+    common_rejection_reasons: [
+      'Incomplete hospital discharge summary',
+      'Invalid or expired parent\'s identity proof',
+      'Missing address proof',
+      'Incomplete application form',
+      'Incorrect parent\'s name or spelling',
+      'No supporting documents for late registration',
+      'Applicant not registered in the jurisdiction',
+      'Conflicting information across documents',
+      'Missing witness affidavit (for home births)',
+      'Application submitted to wrong municipal office'
+    ],
+    official_link: 'https://www.india.gov.in',
+    official_link_text: 'Visit India.gov.in for Municipal Services'
+  },
+  {
+    id: 'death-certificate',
+    name: 'Death Certificate Application',
+    category: 'vital-records',
+    description: 'Register and obtain a death certificate from the municipal corporation',
+    what_is_it: 'A death certificate is an official document issued by the municipal corporation that records the death of a person. It serves as legal proof of death and is required for settling insurance claims, inheritance matters, pension closure, and other legal procedures.',
+    who_can_apply: 'Family members, relatives, or any person present at the time of death. The informant must be someone who knows the deceased.',
+    eligibility: [
+      'Must be a death registered in India',
+      'Must have proof of death (hospital discharge summary, doctor\'s certificate, or witness)',
+      'Must provide deceased\'s identity proof',
+      'Must be registered within 21 days of death'
+    ],
+    documents_required: [
+      {
+        name: 'Hospital discharge summary or medical certificate',
+        description: 'Official document from hospital or doctor confirming death',
+        where_to_get: 'Hospital or treating doctor'
+      },
+      {
+        name: 'Deceased\'s identity proof',
+        description: 'Aadhaar, PAN, voter ID, or any government-issued ID',
+        where_to_get: 'Deceased\'s documents'
+      },
+      {
+        name: 'Informant\'s identity proof',
+        description: 'Identity proof of the person reporting the death',
+        where_to_get: 'Already in your possession'
+      },
+      {
+        name: 'Death registration form',
+        description: 'Form to be filled at the municipal corporation office',
+        where_to_get: 'Municipal corporation office or website'
+      },
+      {
+        name: 'Address proof of deceased',
+        description: 'Electricity bill, rent agreement, or property tax receipt',
+        where_to_get: 'Deceased\'s documents'
+      }
+    ],
+    fees: [
+      {
+        amount: 'Free',
+        description: 'Death certificate registration within 21 days of death'
+      },
+      {
+        amount: '₹50-₹100',
+        description: 'Late registration fee (after 21 days but within 1 year)'
+      },
+      {
+        amount: '₹100-₹500',
+        description: 'Very late registration fee (after 1 year, requires court order)'
+      },
+      {
+        amount: '₹10-₹25',
+        description: 'Duplicate certificate fee'
+      }
+    ],
+    steps: [
+      {
+        number: 1,
+        title: 'Locate Municipal Corporation Office',
+        description: 'Find your nearest municipal corporation office in the area where death occurred.'
+      },
+      {
+        number: 2,
+        title: 'Collect Death Registration Form',
+        description: 'Obtain the death registration form from the municipal office or download from their website.'
+      },
+      {
+        number: 3,
+        title: 'Fill Application Form',
+        description: 'Complete the form with deceased\'s details, cause of death, and informant\'s information.'
+      },
+      {
+        number: 4,
+        title: 'Attach Required Documents',
+        description: 'Attach medical certificate, deceased\'s identity proof, and address proof.'
+      },
+      {
+        number: 5,
+        title: 'Submit Application',
+        description: 'Submit the completed form to the municipal corporation office with all documents.'
+      },
+      {
+        number: 6,
+        title: 'Pay Registration Fee',
+        description: 'Pay the registration fee (if applicable) at the municipal office.'
+      },
+      {
+        number: 7,
+        title: 'Receive Registration Number',
+        description: 'You\'ll receive a registration number and receipt. Keep this for future reference.'
+      },
+      {
+        number: 8,
+        title: 'Collect Death Certificate',
+        description: 'Collect the death certificate from the office (usually within 5-7 working days).'
+      }
+    ],
+    processing_time: '5-7 working days (normal), 15-30 days (late registration)',
+    common_mistakes: [
+      {
+        mistake: 'Incomplete medical certificate',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Ensure medical certificate has all required details, doctor\'s signature, and official stamp.'
+      },
+      {
+        mistake: 'Incorrect deceased\'s name or spelling',
+        consequence: 'Death certificate issued with errors',
+        how_to_avoid: 'Double-check spelling. Use exact name as in identity proof.'
+      },
+      {
+        mistake: 'Missing informant\'s identity proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide valid identity proof of the person reporting the death.'
+      },
+      {
+        mistake: 'Delayed registration without documentation',
+        consequence: 'Application rejection or need for court order',
+        how_to_avoid: 'Register within 21 days. For late registration, provide supporting documents.'
+      },
+      {
+        mistake: 'Incorrect cause of death',
+        consequence: 'Death certificate issued with wrong information',
+        how_to_avoid: 'Verify cause of death from medical certificate before submission.'
+      },
+      {
+        mistake: 'Using invalid identity proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Use valid government-issued ID. Ensure it\'s not expired.'
+      },
+      {
+        mistake: 'Not keeping registration receipt',
+        consequence: 'Difficulty obtaining duplicate certificate',
+        how_to_avoid: 'Keep the registration receipt and registration number safe.'
+      },
+      {
+        mistake: 'Applying to wrong municipal office',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Apply to the municipal office of the area where death occurred.'
+      },
+      {
+        mistake: 'Incomplete application form',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Fill all mandatory fields. Don\'t leave any field blank.'
+      },
+      {
+        mistake: 'Not providing address proof of deceased',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide valid address proof showing deceased\'s residence.'
+      }
+    ],
+    common_rejection_reasons: [
+      'Incomplete medical certificate',
+      'Invalid or expired identity proof',
+      'Missing address proof',
+      'Incomplete application form',
+      'Incorrect deceased\'s name or spelling',
+      'No supporting documents for late registration',
+      'Conflicting information across documents',
+      'Application submitted to wrong municipal office',
+      'Informant not authorized to report death',
+      'Death not registered within legal timeframe'
+    ],
+    official_link: 'https://www.india.gov.in',
+    official_link_text: 'Visit India.gov.in for Municipal Services'
+  },
+  {
+    id: 'marriage-certificate',
+    name: 'Marriage Certificate Registration',
+    category: 'vital-records',
+    description: 'Register your marriage and obtain a marriage certificate',
+    what_is_it: 'A marriage certificate is an official document issued by the municipal corporation or registrar that records the marriage of two individuals. It serves as legal proof of marriage and is required for passport applications, visa processing, bank account updates, insurance claims, and inheritance matters.',
+    who_can_apply: 'Married couples who want to register their marriage. Registration can be done before or after marriage, but must be done within 30 days of marriage.',
+    eligibility: [
+      'Must be legally married (as per applicable personal law)',
+      'Both parties must be willing to register the marriage',
+      'Must be of marriageable age (18+ for females, 21+ for males)',
+      'Must not be in any prohibited relationship',
+      'Must have valid identity proof of both parties'
+    ],
+    documents_required: [
+      {
+        name: 'Marriage invitation or religious ceremony document',
+        description: 'Proof that marriage ceremony took place',
+        where_to_get: 'Marriage invitation card or religious document'
+      },
+      {
+        name: 'Bride\'s identity proof',
+        description: 'Aadhaar, PAN, voter ID, or driving licence',
+        where_to_get: 'Already in your possession'
+      },
+      {
+        name: 'Groom\'s identity proof',
+        description: 'Aadhaar, PAN, voter ID, or driving licence',
+        where_to_get: 'Already in your possession'
+      },
+      {
+        name: 'Address proof of both parties',
+        description: 'Electricity bill, water bill, rent agreement, or property tax receipt',
+        where_to_get: 'Your utility provider or landlord'
+      },
+      {
+        name: 'Witness affidavit',
+        description: 'Affidavit from two witnesses to the marriage',
+        where_to_get: 'Notary public (witnesses must sign)'
+      },
+      {
+        name: 'Marriage registration form',
+        description: 'Form to be filled at the municipal corporation office',
+        where_to_get: 'Municipal corporation office or website'
+      },
+      {
+        name: 'Photographs of bride and groom',
+        description: 'Passport-size photographs (4x6 cm) with white background',
+        where_to_get: 'Any photography studio'
+      }
+    ],
+    fees: [
+      {
+        amount: 'Free',
+        description: 'Marriage certificate registration within 30 days of marriage'
+      },
+      {
+        amount: '₹50-₹100',
+        description: 'Late registration fee (after 30 days but within 1 year)'
+      },
+      {
+        amount: '₹100-₹500',
+        description: 'Very late registration fee (after 1 year, requires court order)'
+      },
+      {
+        amount: '₹10-₹25',
+        description: 'Duplicate certificate fee'
+      }
+    ],
+    steps: [
+      {
+        number: 1,
+        title: 'Locate Marriage Registrar Office',
+        description: 'Find your nearest marriage registrar office (usually at municipal corporation or district office).'
+      },
+      {
+        number: 2,
+        title: 'Collect Marriage Registration Form',
+        description: 'Obtain the marriage registration form from the registrar office or download from their website.'
+      },
+      {
+        number: 3,
+        title: 'Fill Application Form',
+        description: 'Complete the form with details of both bride and groom, marriage date, and place.'
+      },
+      {
+        number: 4,
+        title: 'Attach Required Documents',
+        description: 'Attach identity proofs, address proofs, witness affidavit, and marriage invitation.'
+      },
+      {
+        number: 5,
+        title: 'Submit Application',
+        description: 'Submit the completed form to the marriage registrar office with all documents.'
+      },
+      {
+        number: 6,
+        title: 'Pay Registration Fee',
+        description: 'Pay the registration fee (if applicable) at the registrar office.'
+      },
+      {
+        number: 7,
+        title: 'Verification Process',
+        description: 'The registrar will verify the information and may conduct an interview with the couple.'
+      },
+      {
+        number: 8,
+        title: 'Receive Marriage Certificate',
+        description: 'Collect the marriage certificate from the office (usually within 5-7 working days).'
+      }
+    ],
+    processing_time: '5-7 working days (normal), 15-30 days (late registration)',
+    common_mistakes: [
+      {
+        mistake: 'Incorrect marriage date',
+        consequence: 'Marriage certificate issued with wrong date',
+        how_to_avoid: 'Verify marriage date before submission. Use date from marriage invitation or religious document.'
+      },
+      {
+        mistake: 'Spelling inconsistencies in names',
+        consequence: 'Marriage certificate issued with errors',
+        how_to_avoid: 'Ensure names match exactly with identity proofs. Use same spelling across all documents.'
+      },
+      {
+        mistake: 'Missing witness affidavit',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Obtain affidavit from two witnesses to the marriage. Get it notarized.'
+      },
+      {
+        mistake: 'Invalid or expired identity proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Use valid government-issued ID. Ensure it\'s not expired.'
+      },
+      {
+        mistake: 'Incomplete address proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide valid address proof for both bride and groom.'
+      },
+      {
+        mistake: 'Delayed registration without proper documentation',
+        consequence: 'Application rejection or need for court order',
+        how_to_avoid: 'Register within 30 days. For late registration, provide supporting documents.'
+      },
+      {
+        mistake: 'Using poor quality photographs',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide clear, recent passport-size photographs with white background.'
+      },
+      {
+        mistake: 'Not keeping registration receipt',
+        consequence: 'Difficulty obtaining duplicate certificate',
+        how_to_avoid: 'Keep the registration receipt and registration number safe.'
+      },
+      {
+        mistake: 'Incomplete application form',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Fill all mandatory fields. Don\'t leave any field blank.'
+      },
+      {
+        mistake: 'Applying to wrong registrar office',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Apply to the registrar office of the area where marriage took place.'
+      }
+    ],
+    common_rejection_reasons: [
+      'Incomplete application form',
+      'Invalid or expired identity proof',
+      'Missing witness affidavit',
+      'Address proof not acceptable',
+      'Spelling inconsistencies in names',
+      'No supporting documents for late registration',
+      'Conflicting information across documents',
+      'Poor quality or missing photographs',
+      'Applicants below marriageable age',
+      'Application submitted to wrong registrar office'
+    ],
+    official_link: 'https://www.india.gov.in',
+    official_link_text: 'Visit India.gov.in for Registration Services'
+  },
+  {
+    id: 'ration-card-new',
+    name: 'Ration Card - New Application',
+    category: 'welfare',
+    description: 'Apply for a new ration card to access subsidized food grains',
+    what_is_it: 'A ration card is an official document issued by the state food and civil supplies department that entitles the holder to purchase subsidized food grains (rice, wheat, sugar) and other essential commodities. It serves as proof of residence and is linked to various government welfare schemes.',
+    who_can_apply: 'Indian citizens who are permanent residents of a state and wish to access subsidized food grains through the Public Distribution System (PDS).',
+    eligibility: [
+      'Must be an Indian citizen',
+      'Must be a permanent resident of the state',
+      'Must have proof of residence in the state',
+      'Must not already have a ration card in the same state',
+      'Must meet income criteria (varies by state and category)'
+    ],
+    documents_required: [
+      {
+        name: 'Address proof',
+        description: 'Electricity bill, water bill, rent agreement, property tax receipt, or ration card of family member',
+        where_to_get: 'Your utility provider or landlord'
+      },
+      {
+        name: 'Identity proof',
+        description: 'Aadhaar, PAN, voter ID, driving licence, or passport',
+        where_to_get: 'Already in your possession'
+      },
+      {
+        name: 'Ration card application form',
+        description: 'Form to be filled at the food and civil supplies office',
+        where_to_get: 'Food and civil supplies office or website'
+      },
+      {
+        name: 'Income proof (if applicable)',
+        description: 'For BPL/APL categories, income certificate from tahsildar',
+        where_to_get: 'Tahsildar office'
+      },
+      {
+        name: 'Family list',
+        description: 'List of all family members with their details',
+        where_to_get: 'To be prepared by applicant'
+      }
+    ],
+    fees: [
+      {
+        amount: '₹0-₹50',
+        description: 'Ration card application fee (varies by state)'
+      }
+    ],
+    steps: [
+      {
+        number: 1,
+        title: 'Locate Food and Civil Supplies Office',
+        description: 'Find your nearest food and civil supplies office (also called ration office or PDS office) in your area.'
+      },
+      {
+        number: 2,
+        title: 'Collect Application Form',
+        description: 'Obtain the ration card application form from the office or download from the state website.'
+      },
+      {
+        number: 3,
+        title: 'Fill Application Form',
+        description: 'Complete the form with your personal details, family members, and residential address.'
+      },
+      {
+        number: 4,
+        title: 'Attach Required Documents',
+        description: 'Attach address proof, identity proof, and income proof (if applicable).'
+      },
+      {
+        number: 5,
+        title: 'Submit Application',
+        description: 'Submit the completed form to the food and civil supplies office with all documents.'
+      },
+      {
+        number: 6,
+        title: 'Pay Application Fee',
+        description: 'Pay the application fee (if applicable) at the office.'
+      },
+      {
+        number: 7,
+        title: 'Verification Process',
+        description: 'The office will verify your documents and conduct a survey of your residence.'
+      },
+      {
+        number: 8,
+        title: 'Receive Ration Card',
+        description: 'Collect your ration card from the office (usually within 15-30 days).'
+      }
+    ],
+    processing_time: '15-30 days (subject to verification and survey)',
+    common_mistakes: [
+      {
+        mistake: 'Incomplete address proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide valid address proof showing current residence with name and address clearly visible.'
+      },
+      {
+        mistake: 'Incorrect family member details',
+        consequence: 'Ration card issued with errors or family members not added',
+        how_to_avoid: 'List all family members accurately with correct names and relationships.'
+      },
+      {
+        mistake: 'Using invalid identity proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Use valid government-issued ID. Ensure it\'s not expired.'
+      },
+      {
+        mistake: 'Incomplete application form',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Fill all mandatory fields. Don\'t leave any field blank.'
+      },
+      {
+        mistake: 'Not providing income proof when required',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Check if income proof is required for your category. Obtain from tahsildar if needed.'
+      },
+      {
+        mistake: 'Applying from wrong office',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Apply to the food and civil supplies office of your residential area.'
+      },
+      {
+        mistake: 'Not being present for survey',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Be present at your residence during the survey. Inform the office if you\'re unavailable.'
+      },
+      {
+        mistake: 'Providing incorrect address',
+        consequence: 'Ration card issued for wrong address',
+        how_to_avoid: 'Provide your current residential address. Update if you move.'
+      },
+      {
+        mistake: 'Not keeping application receipt',
+        consequence: 'Difficulty tracking status',
+        how_to_avoid: 'Keep the application receipt and reference number safe.'
+      },
+      {
+        mistake: 'Spelling inconsistencies',
+        consequence: 'Ration card issued with errors',
+        how_to_avoid: 'Ensure spelling of names matches across all documents.'
+      }
+    ],
+    common_rejection_reasons: [
+      'Incomplete or invalid address proof',
+      'Invalid or expired identity proof',
+      'Incomplete application form',
+      'Incorrect family member details',
+      'Missing income proof (if required)',
+      'Applicant not present during survey',
+      'Spelling inconsistencies',
+      'Already holding ration card in the state',
+      'Income exceeds limit for category',
+      'Application submitted to wrong office'
+    ],
+    official_link: 'https://www.india.gov.in',
+    official_link_text: 'Visit India.gov.in for Ration Card Services'
+  },
+  {
+    id: 'ration-card-correction',
+    name: 'Ration Card - Correction & Updates',
+    category: 'welfare',
+    description: 'Correct errors or update information on your existing ration card',
+    what_is_it: 'Ration card correction and updates allow you to modify incorrect information on your ration card, add or remove family members, update address, or correct spelling errors. This ensures your ration card remains accurate and functional for accessing PDS benefits.',
+    who_can_apply: 'Any person holding a valid ration card who needs to correct errors or update information on their card.',
+    eligibility: [
+      'Must have an existing valid ration card',
+      'Must provide proof of the correction needed',
+      'Must have valid identity proof',
+      'Must apply to the correct food and civil supplies office'
+    ],
+    documents_required: [
+      {
+        name: 'Original ration card',
+        description: 'Your current ration card',
+        where_to_get: 'In your possession'
+      },
+      {
+        name: 'Identity proof',
+        description: 'Aadhaar, PAN, voter ID, or driving licence',
+        where_to_get: 'Already in your possession'
+      },
+      {
+        name: 'Proof of correction',
+        description: 'Document supporting the correction (e.g., birth certificate for name, marriage certificate for name change)',
+        where_to_get: 'Relevant government office'
+      },
+      {
+        name: 'Address proof (if updating address)',
+        description: 'Electricity bill, water bill, or rent agreement',
+        where_to_get: 'Your utility provider or landlord'
+      },
+      {
+        name: 'Correction application form',
+        description: 'Form to be filled at the food and civil supplies office',
+        where_to_get: 'Food and civil supplies office or website'
+      },
+      {
+        name: 'Affidavit (if needed)',
+        description: 'Notarized affidavit for corrections without supporting documents',
+        where_to_get: 'Notary public'
+      }
+    ],
+    fees: [
+      {
+        amount: '₹0-₹50',
+        description: 'Correction fee (varies by state)'
+      }
+    ],
+    steps: [
+      {
+        number: 1,
+        title: 'Identify the Correction Needed',
+        description: 'Determine what information needs to be corrected (name, address, family members, etc.).'
+      },
+      {
+        number: 2,
+        title: 'Gather Supporting Documents',
+        description: 'Collect documents that prove the correction (birth certificate, marriage certificate, address proof, etc.).'
+      },
+      {
+        number: 3,
+        title: 'Visit Food and Civil Supplies Office',
+        description: 'Go to your nearest food and civil supplies office with original ration card and supporting documents.'
+      },
+      {
+        number: 4,
+        title: 'Fill Correction Form',
+        description: 'Complete the ration card correction form with details of the correction needed.'
+      },
+      {
+        number: 5,
+        title: 'Submit Application',
+        description: 'Submit the completed form with original ration card and supporting documents.'
+      },
+      {
+        number: 6,
+        title: 'Pay Correction Fee',
+        description: 'Pay the correction fee (if applicable) at the office.'
+      },
+      {
+        number: 7,
+        title: 'Verification Process',
+        description: 'The office will verify the information and supporting documents.'
+      },
+      {
+        number: 8,
+        title: 'Receive Updated Ration Card',
+        description: 'Collect your corrected ration card from the office (usually within 5-15 days).'
+      }
+    ],
+    processing_time: '5-15 working days (subject to verification)',
+    common_mistakes: [
+      {
+        mistake: 'Incomplete supporting documents',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide all necessary documents that support the correction.'
+      },
+      {
+        mistake: 'Not providing original ration card',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Bring original ration card to the office.'
+      },
+      {
+        mistake: 'Incorrect correction details',
+        consequence: 'Correction not made or incorrect correction applied',
+        how_to_avoid: 'Clearly specify what needs to be corrected. Double-check before submission.'
+      },
+      {
+        mistake: 'Using invalid identity proof',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Use valid government-issued ID. Ensure it\'s not expired.'
+      },
+      {
+        mistake: 'Incomplete application form',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Fill all mandatory fields. Don\'t leave any field blank.'
+      },
+      {
+        mistake: 'Applying to wrong office',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Apply to the food and civil supplies office that issued your ration card.'
+      },
+      {
+        mistake: 'Not keeping application receipt',
+        consequence: 'Difficulty tracking status',
+        how_to_avoid: 'Keep the application receipt and reference number safe.'
+      },
+      {
+        mistake: 'Requesting multiple corrections without proper documentation',
+        consequence: 'Application rejection',
+        how_to_avoid: 'Provide supporting documents for each correction requested.'
+      },
+      {
+        mistake: 'Spelling inconsistencies in correction',
+        consequence: 'Correction not applied or applied incorrectly',
+        how_to_avoid: 'Ensure corrected spelling matches supporting documents exactly.'
+      },
+      {
+        mistake: 'Not updating address when moving',
+        consequence: 'Ration card becomes invalid or benefits not accessible',
+        how_to_avoid: 'Update address immediately after moving. Provide new address proof.'
+      }
+    ],
+    common_rejection_reasons: [
+      'Incomplete or invalid supporting documents',
+      'Original ration card not provided',
+      'Invalid or expired identity proof',
+      'Incomplete application form',
+      'Incorrect correction details',
+      'Spelling inconsistencies',
+      'Application submitted to wrong office',
+      'Correction not supported by documents',
+      'Ration card already corrected',
+      'Applicant not authorized to make correction'
+    ],
+    official_link: 'https://www.india.gov.in',
+    official_link_text: 'Visit India.gov.in for Ration Card Services'
   }
 ];
 
@@ -1173,5 +2006,7 @@ export const categories = [
   { id: 'travel', name: 'Travel & Passport', icon: '✈️' },
   { id: 'tax', name: 'Tax & Finance', icon: '💰' },
   { id: 'transport', name: 'Transport & Vehicles', icon: '🚗' },
-  { id: 'education', name: 'Education & Scholarships', icon: '🎓' }
+  { id: 'education', name: 'Education & Scholarships', icon: '🎓' },
+  { id: 'vital-records', name: 'Vital Records', icon: '📋' },
+  { id: 'welfare', name: 'Welfare & Benefits', icon: '🤝' }
 ];
